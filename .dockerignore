@@ -1,0 +1,20 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# VCS / Editor
+.git
+.vscode
+
+# Env and config
+.env
+.env.*
+
+# Build outputs
+out/
+dist/
+.next/
+.turbo/
+
+# OS files
+.DS_Store

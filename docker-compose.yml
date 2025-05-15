@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  smtp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bulkmagic-apps:latest
+    working_dir: /out/app/apps/smtp
+    command: ["pnpm", "start"]
+    ports:
+      - "3001:3000"
+    env_file:
+      - ./apps/smtp/.env
+    environment:
+      - NODE_ENV=production
+
+  stripe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /out/app/apps/stripe
+    command: ["pnpm", "start"]
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./apps/stripe/.env
+    environment:
+      - NODE_ENV=production
